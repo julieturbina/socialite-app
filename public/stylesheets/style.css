@@ -1,24 +1,20 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: rgb(18, 172, 233);
-}
+  color: #12ace9; }
 
 #form {
   margin: 30px auto;
-  width: 250px;
-}
+  width: 250px; }
 
 #form label {
-  color: rgb(33, 16, 220);
+  color: #2110dc;
   display: inline-block;
   margin-bottom: 10px;
   text-align: center;
-  width: 25%;
-}
+  width: 25%; }
 
 #form input,
 #form button {
@@ -27,12 +23,11 @@ a {
   font-size: 15px;
   outline: 0;
   padding: 4px;
-  width: 100%;
-}
+  width: 100%; }
 
 #form button {
-  background:  rgb(33, 16, 220);
-  border: 1px solid rgb(7, 1, 79);
+  background: #2110dc;
+  border: 1px solid #07014f;
   border-radius: 25px;
   color: #fff;
   cursor: pointer;
@@ -42,21 +37,20 @@ a {
   text-decoration: none;
   text-transform: uppercase;
   transition: .3s ease background;
-  width: 100%;
-}
+  width: 100%; }
 
 #form button:hover {
   background: #fff;
-  color: rgb(33, 16, 220);
-  transition: .3s ease background;
-}
+  color: #2110dc;
+  transition: .3s ease background; }
 
 .error-message {
-  background: rgb(238, 28, 172);
+  background: #ee1cac;
   border-radius: 35px;
   box-sizing: border-box;
   color: #fff;
   margin: 20px auto;
   padding: 20px;
-  width: 50%;
-}
+  width: 50%; }
+
+/*# sourceMappingURL=style.css.map */
