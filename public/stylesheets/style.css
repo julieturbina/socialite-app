@@ -51,6 +51,23 @@ a {
   color: #fff;
   margin: 20px auto;
   padding: 20px;
-  width: 50%; }
+  width: 100%; }
+
+.message {
+  background: #ee1cac;
+  border-radius: 35px;
+  box-sizing: border-box;
+  color: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  width: 100%; }
+
+#loginImg {
+  height: 700px; }
+
+#couture {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 /*# sourceMappingURL=style.css.map */

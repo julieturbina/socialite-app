@@ -11,7 +11,7 @@
 <body>
  
 
-  <form id="form" action="/signup" method="POST">
+  <form id="form" action="/signup" method="POST" id="form-container">
     <label for="username">Username</label><br>
     <input type="text" name="username"
       placeholder="Username">
@@ -29,14 +29,16 @@
      Sign in if you have an account?
     <a href="/login">Login</a>
   </p>
-<div>
+
+
+        {{#if message}}
+    <div class="error-message">{{ message }}</div>
+  {{/if}} 
+
+    <div>
   <a href="/auth/facebook">Login With Facebook</a>
 </div>
-       {{#if errorMessage}}
-        <div class="error-message">{{ errorMessage }}</div>
-    {{/if}}
-    {{{captcha}}}
-
+<img id="loginImg"src="../images/runway1.jpg"
 </form>
 
   </form>

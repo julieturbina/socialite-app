@@ -22,14 +22,16 @@ authRoutes.get("/logout", (req, res) => {
   res.redirect("/login");
 });
 
-// authRoutes.get("/home", ensureLogin.ensureLoggedIn(), (req, res) => {
-//   res.render("/private", { user: req.user });
-// });
-
 
 authRoutes.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
+
+authRoutes.get("/login", (req, res, next) => {
+  res.render("auth/login", { "message": req.flash("error") });
+});
+
+
 authRoutes.post("/login", passport.authenticate("local", {
   successRedirect: "/",
   failureRedirect: "/login",
@@ -42,7 +44,7 @@ authRoutes.post("/signup", (req, res, next) => {
     const password = req.body.password;
 
     if (username === "" || password === "") {
-      res.render("auth/signup", { message: "Indicate username and password" });
+      res.render("auth/signup", { message: "Enter username and password" });
       return;
     }
       
@@ -121,6 +123,10 @@ authRoutes.post("/login", (req, res, next) => {
       authRoutes.get("/logout", (req, res) => {
         req.logout();
         res.redirect("/login");
+      });
+
+      authRoutes.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
+        res.render("private", { user: req.user });
       });
   });
 });

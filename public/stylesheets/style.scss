@@ -58,5 +58,30 @@ a {
   color: #fff;
   margin: 20px auto;
   padding: 20px;
-  width: 50%;
+  width: 100%;
+}
+
+.message {
+  background: rgb(238, 28, 172);
+  border-radius: 35px;
+  box-sizing: border-box;
+  color: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  width: 100%;
+}
+#loginImg{
+  height:700px;
+  // width:
+}
+#makeup {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#couture {
+  // background-image: url ("images/coutureill.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
