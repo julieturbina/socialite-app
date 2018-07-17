@@ -57,6 +57,7 @@ app.use(session({
   secret: "socialite",
   resave: true,
   saveUninitialized: true,
+  store: new MongoStore( { mongooseConnection: mongoose.connection })
 }));
 app.use(passport.initialize());
 app.use(passport.session());

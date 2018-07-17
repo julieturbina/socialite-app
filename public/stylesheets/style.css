@@ -65,6 +65,11 @@ a {
 #loginImg {
   height: 700px; }
 
+#makeup {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
 #couture {
   background-position: center;
   background-repeat: no-repeat;
