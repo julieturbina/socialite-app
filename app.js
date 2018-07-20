@@ -9,15 +9,17 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 const session = require("express-session");
-const MongoStore = require('connect-mongo')(session);
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const User         = require("./models/user");
 const flash = require("connect-flash");
 const FbStrategy = require('passport-facebook').Strategy;
 
+
 const FACEBOOK_APP_ID = process.env.FACEBOOK_APP_ID;
 const FACEBOOK_APP_SECRET = process.env.FACEBOOK_APP_SECRET;
+
+
 
 const bcrypt     = require("bcrypt");
 const saltRounds = 10;
@@ -31,6 +33,8 @@ const hash2 = bcrypt.hashSync(plainPassword2, salt);
 
 console.log("Hash 1 -", hash1);
 console.log("Hash 2 -", hash2);
+
+const MongoStore = require('connect-mongo')(session);
 
 
 mongoose.Promise = Promise;
@@ -59,13 +63,14 @@ app.use(session({
   saveUninitialized: true,
   store: new MongoStore( { mongooseConnection: mongoose.connection })
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
 //FACEBOOK=======================
 passport.use(new FbStrategy({
-  clientID: " ",
-  clientSecret: " ",
+  clientID: FACEBOOK_APP_ID,
+  clientSecret: FACEBOOK_APP_SECRET,
   callbackURL: "/auth/facebook/callback"
 }, (accessToken, refreshToken, profile, done) => {
   User.findOne({ facebookID: profile.id }, (err, user) => {
@@ -135,6 +140,11 @@ app.use(require('node-sass-middleware')({
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+//testing route consider deleting below
+// app.set('views', __dirname + '/views');
+//testing route consider deleting above
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 

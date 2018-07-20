@@ -1,15 +1,53 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+{{!-- testing --}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My first view</title>
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
 
-<div>
-<button><a href="/auth/facebook">Login With Facebook-index page</a></button>
+{{!-- testing above --}}
+
+<h1>Index page </h1>
+
+<a href="/logout">Logout</a>
+
+  <div>
+
+      <h1>Hello {{{userName}}}!</h1>
+      <h2>Welcome to the {{{bootcamp}}}!!</h2>
+
+
+    {{#each cities}}
+      <li>{{this}}</li>
+    {{else}}
+      <p>Available worlwide in less than 1 year!</p>
+    {{/each}}
+
+  </div>
+
+
+<ul>
+    <li>Beauty</li>
+        <ol>Botox</ol>
+        <ol>Facials</ol>
+     <li>Makeup</li>
+        <ol>Red carpet</ol>
+        <ol>Wedding</ol>
+    <li>Fashion</li>
+        <ol>couture</ol>
+        <ol>Ready-to wear</ol>
+        </ol>
+</ul>
+<ul>
+
+</ul>
 </div>
 <div>
-<button><a href="/login">Login</a></button>
-</div>
-<div>
-<button><a href="/signup">Sign up</a></button>
+    <img id="indexImg" src ="../images/makeupill.jpeg"
 </div>
 
-
-<img id="couture" src="../images/coutureill.jpeg";
+</body>
+</html>

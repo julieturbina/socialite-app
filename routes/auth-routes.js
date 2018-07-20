@@ -13,9 +13,11 @@ const bcryptSalt     = 10;
 //FACEBOOK===================
 authRoutes.get("/auth/facebook", passport.authenticate("facebook"));
 authRoutes.get("/auth/facebook/callback", passport.authenticate("facebook", {
-  successRedirect: "/private-page",
+  successRedirect: "/private",
   failureRedirect: "/"
 }));
+
+//Logout route
 
 authRoutes.get("/logout", (req, res) => {
   req.logout();
@@ -27,17 +29,17 @@ authRoutes.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
-authRoutes.get("/login", (req, res, next) => {
-  res.render("auth/login", { "message": req.flash("error") });
-});
+// authRoutes.get("/login", (req, res, next) => {
+//   res.render("auth/login", { "message": req.flash("error") });
+// });
 
 
-authRoutes.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
-  failureRedirect: "/login",
-  failureFlash: true,
-  passReqToCallback: true
-}));
+// authRoutes.post("/login", passport.authenticate("local", {
+//   successRedirect: "/",
+//   failureRedirect: "/login",
+//   failureFlash: true,
+//   passReqToCallback: true
+// }));
 
 authRoutes.post("/signup", (req, res, next) => {
     const username = req.body.username;
@@ -82,7 +84,8 @@ authRoutes.get("/login", (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error") });
 });
 
-authRoutes.post("/login", passport.authenticate("local", {
+authRoutes.post("/login", passport.authenticate("local", 
+{
   successRedirect: "/",
   failureRedirect: "/login",
   failureFlash: true,

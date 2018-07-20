@@ -1,3 +1,9 @@
 # socialite-app
-Authentication created - 2 users confirmed in Mongodb
+Authentication created - 
+    users confirmed in Mongodb
+    sessions created
 Login with facebook
+
+Create models
+
+CRUD
